@@ -6,6 +6,8 @@
 
 # Put down some options for the user to choose from...
 
+import datetime
+
 print("1. Weather")
 print("2. Date")
 print("3. President of Yugoslavia from 1953 - 1980")
@@ -16,7 +18,9 @@ choice = int(input("What would you like to learn about? Please pick a number fro
 if choice == 1:
     print("It is rainy and cloudy!")
 elif choice == 2:
-    print ("It is September 16, 2019!")
+	now = datetime.datetime.now()
+
+	print (now.strftime("%Y-%m-%d %I:%M"))
 elif choice == 3:
     print ("TITO!")
 else:
