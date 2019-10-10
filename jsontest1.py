@@ -30,19 +30,27 @@ def writeHTML(data):
 
 def main():
     # use API to get place info
-    response = requests.get("https://geo-info.co/43.65,-79.40")
+    response = requests.get("https://swapi.co/api/films/")
 
     # if API call is correct
     if (response.status_code == 200):
         data = response.content # response comes in as byte data type
         data_as_str = data.decode()    # decode to str
         writeHTML(data_as_str)  # call function to write string data to HTML file
+        datajson = response.json()
+        # print(data)
+
+        res = datajson["results"]
+
+        for movie in res:
+            title = movie['title']
+            print(title)
 
         # load as a JSON to access specific data more easily
-        datajson = response.json()
-        cities = datajson['nearbyCities']
-        for city in cities:
-            print(city)
+        # datajson = response.json()
+        # cities = datajson['nearbyCities']
+        # for city in cities:
+            # print(city)
         
     else:
         data = "Error has occured"
