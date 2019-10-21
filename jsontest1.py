@@ -1,29 +1,11 @@
-'''
-myapi.py 
-- simple program to demo using a web API with requests Python module
-- secondary function to demo how to write out received data to an HTML file 
-'''
+#Star Wars API
+#Stefan Ateljevic
+#Mr. Jugoon
 
 import requests
 import json
 
-# Find APIs at - https://apilist.fun/
-# some will require an API key, boo hiss!
 
-# cool geo example
-# https://geo-info.co/?ref=apilist.fun
-# example - https://geo-info.co/43.65,-79.40
-
-# cool funny example
-# https://funtranslations.com/api/chef
-# https://api.funtranslations.com/translate/chef.json?text=I%20like%20upper%20canada%20college
-
-# For any indentation errors, make sure there are no tabs (\t) by doing 
-# a full replace of \t with 4 actual spaces
-
-#Which information would you like?
-#Movies, characters, planets.
-#User will select the one that they want. 
 
 def writeHTML(data):
     myfile = open("myapi.html","w")
@@ -40,20 +22,19 @@ def writeHTML(data):
     myfile.close()
 
 def getMovies():
-    #do all the stuff
     movies = requests.get("https://swapi.co/api/films/")
     if (movies.status_code == 200):
-        data = movies.content # response comes in as byte data type
-        data_as_str = data.decode()    # decode to str
-          # call function to write string data to HTML file
+        data = movies.content 
+        data_as_str = data.decode()    
         datajson = movies.json()
-        # print(data)
-        titles = []
-        for movie in res:
-            title = movie['title']
-            titles.append(title)
-            # print(movie)
-        writeHTML(titles)
+        movies = []
+        print(datajson)
+        for movie in datajson["results"]:
+            print(movie)
+            title = movie["title"]
+            movies.append(title)
+        print(movies)    
+        writeHTML(movies)
 
 
 
@@ -69,9 +50,70 @@ def getCharacters():
             print(person)
             name = person["name"]
             people.append(name)
-            # print(person)
         print(people)
         writeHTML(people)
+
+
+def getPlanets():
+    planets = requests.get("https://swapi.co/api/planets/")
+    if (planets.status_code ==200):
+        data = planets.content
+        data_as_str = data.decode()
+        datajson = planets.json()
+        planets = []
+        print(datajson)
+        for planet in datajson["results"]:
+            print(planet)
+            name = planet["name"]
+            planets.append(name)
+        print(planets)
+        writeHTML(planets)
+
+def getSpecies():
+    species = requests.get("https://swapi.co/api/species/")
+    if (species.status_code ==200):
+        data = species.content
+        data_as_str = data.decode()
+        datajson = species.json()
+        species = []
+        print(datajson)
+        for name in datajson["results"]:
+            print(name)
+            name = name["name"]
+            species.append(name)
+        print(species)
+        writeHTML(species) 
+
+def getVehicles():
+    vehicles = requests.get("https://swapi.co/api/vehicles/")
+    if (vehicles.status_code ==200):
+        data = vehicles.content
+        data_as_str = data.decode()
+        datajson = vehicles.json()
+        vehicles = []
+        print(datajson)
+        for vehicle in datajson["results"]:
+            print(vehicle)
+            name = vehicle["name"]
+            vehicles.append(name)
+        print(vehicles)
+        writeHTML(vehicles)
+
+def getStarships():
+    starships = requests.get("https://swapi.co/api/starships/")
+    if(starships.status_code ==200):
+        data = starships.content
+        data_as_str = data.decode()
+        datajson = starships.json()
+        starships = []
+        print(datajson)
+        for starship in datajson["results"]:
+            print(starship)
+            name = starship["name"]
+            starships.append(name)
+        print(starships)
+        writeHTML(starships)
+
 
 
 def main():
@@ -79,17 +121,31 @@ def main():
     print(" ")
     print("1. The Movies")
     print("2. The Characters")
-    print("3. The planets")
+    print("3. The Planets")
+    print("4. The Species")
+    print("5. The Vehicles")
+    print("6. The Starships")
     print(" ")
 
-    choice = int(input(" Which Star Wars facts would you like to learn about? Please pick a number from 1 to 3.\n"))
-    # use API to get place info
+    choice = int(input(" Which Star Wars facts would you like to learn about? Please pick a number from 1 to 6.\n"))
 
     if choice == 1:
         getMovies()
 
-    elif choice == 2: 
+    elif choice == 2:
         getCharacters()
+
+    elif choice == 3:
+        getPlanets() 
+
+    elif choice == 4:
+        getSpecies() 
+
+    elif choice == 5:
+        getVehicles()  
+
+    elif choice == 6: 
+        getStarships()
 
     else: 
         print ("This is not a valid choice")
@@ -97,36 +153,5 @@ def main():
 
 
 
-    # # if API call is correct
-    # if (movies.status_code == 200):
-    #     data = movies.content # response comes in as byte data type
-    #     data_as_str = data.decode()    # decode to str
-    #       # call function to write string data to HTML file
-    #     datajson = movies.json()
-    #     # print(data)
-
-    #     res = datajson["results"]
-    #     peopleres = people.json()["results"]
-
-    #     people = []
-    #     for person in peopleres:
-    #         name = person["name"]
-    #         people.append(name)
-    #         # print(person)
-
-
-    #     titles = []
-    #     for movie in res:
-    #         title = movie['title']
-    #         titles.append(title)
-    #         # print(movie)
-
-
-    #     writeHTML(titles, people)
-
-        
-    # else:
-    #     data = "Error has occured"
-    #     writeHTML(data)
 
 main()
