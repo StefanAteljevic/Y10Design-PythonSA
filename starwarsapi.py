@@ -10,7 +10,21 @@ import json
 def writeHTML(data):
     myfile = open("myapi.html","w")
     myfile.write("<head><link rel='stylesheet' type='text/css' href='style.css'></head>")
-    myfile.write("<h1> Star Wars Data, Facts, and Statistics</h1>")
+    myfile.write("""
+
+        <!DOCTYPE html>
+        <html>
+
+            <head>
+
+                <title> Star Wars API </title>
+
+            </head>
+
+        </html>""")
+
+
+
     for i in range(len(data)):
         myfile.write(f"<h1>{data[i]}</h1>")
     # for i in range(len(people)):

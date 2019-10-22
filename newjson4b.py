@@ -17,7 +17,7 @@ def writeHTML(data):
     
     ############### CSS
     
-    myfile.write("""
+    myfile.write(""" 
     <html>
 
       <head>
