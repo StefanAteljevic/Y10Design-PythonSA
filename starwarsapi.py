@@ -9,22 +9,32 @@ import json
 
 def writeHTML(data):
     myfile = open("myapi.html","w")
-    myfile.write("<head><link rel='stylesheet' type='text/css' href='style.css'></head>")
     myfile.write("""
 
-        <!DOCTYPE html>
-        <html>
+    <!DOCTYPE html>
+    <html>
 
-            <head>
+        <head>
 
-                <title> Star Wars API </title>
+        <body bgcolor="black">
 
-            </head>
+            <title> Star Wars API </title>
 
-        </html>""")
+        <div class="starwars-image"></div>
 
+        <div class="starwars-text">
+            <h1>Welcome to the Star Wars API</h1>
+            <p>For all of your Star Wars facts and statistics!</p>
+        </div>   
 
+        <div class="subtitle">
+        <h1 style="background-color:#000000;">The information you request will be displayed below:</h1>
+        </div>
 
+        </head>
+
+    </html>""")
+    myfile.write("<head><link rel='stylesheet' type='text/css' href='style.css'></head>")
     for i in range(len(data)):
         myfile.write(f"<h1>{data[i]}</h1>")
     # for i in range(len(people)):
@@ -33,6 +43,27 @@ def writeHTML(data):
     # myfile.write("<h1>JSON file returned by API call</h1>")
     # myfile.write("<p>Copy and paste to <a href='https://jsoneditoronline.org/'>JSON editor</a> for pretty format.</p>")
     # myfile.write(data)
+
+    # myfile.write("""
+
+    # <!DOCTYPE html>
+    # <html>
+
+    #     <head>
+
+    #         <title> Star Wars API </title>
+
+    #     <div class="starwars-image"></div>
+
+    #     <div class="starwars-text">
+    #         <h1>Welcome to the Star Wars API</h1>
+    #         <p>For all of your Star Wars facts and statistics</p>
+    #     </div>   
+
+    #     </head>
+
+    # </html>""")
+
     myfile.close()
 
 def getMovies():
@@ -131,7 +162,10 @@ def getStarships():
 
 
 def main():
+    print(" ")
     print("Welcome to the Star Wars API.")
+    print(" ")
+    print("Once you make a selection below, head over to myapi.html to view what you've    selected.")
     print(" ")
     print("1. The Movies")
     print("2. The Characters")
@@ -141,7 +175,7 @@ def main():
     print("6. The Starships")
     print(" ")
 
-    choice = int(input(" Which Star Wars facts would you like to learn about? Please pick a number from 1 to 6.\n"))
+    choice = int(input("Which Star Wars facts would you like to learn about? Please pick a number from 1to 6.\n"))
     # use API to get place info
 
     if choice == 1:
