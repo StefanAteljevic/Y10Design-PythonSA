@@ -1,10 +1,11 @@
 #Star Wars API
 #Stefan Ateljevic
-#Mr. Jugoon
+#Mr. Jugoon's class
 
 import requests
 import json
-
+import webbrowser
+#This imports all of the required applications to run my program. 
 
 
 def writeHTML(data):
@@ -37,34 +38,10 @@ def writeHTML(data):
     myfile.write("<head><link rel='stylesheet' type='text/css' href='style.css'></head>")
     for i in range(len(data)):
         myfile.write(f"<h1>{data[i]}</h1>")
-    # for i in range(len(people)):
-        # myfile.write(f"<h1>{people[i]}</h1>")
-    # myfile.write("<h1>" + titles[0] + "</h1>")
-    # myfile.write("<h1>JSON file returned by API call</h1>")
-    # myfile.write("<p>Copy and paste to <a href='https://jsoneditoronline.org/'>JSON editor</a> for pretty format.</p>")
-    # myfile.write(data)
-
-    # myfile.write("""
-
-    # <!DOCTYPE html>
-    # <html>
-
-    #     <head>
-
-    #         <title> Star Wars API </title>
-
-    #     <div class="starwars-image"></div>
-
-    #     <div class="starwars-text">
-    #         <h1>Welcome to the Star Wars API</h1>
-    #         <p>For all of your Star Wars facts and statistics</p>
-    #     </div>   
-
-    #     </head>
-
-    # </html>""")
-
     myfile.close()
+
+#This is where we access the HTML file, open it, and alter it.
+#We added design customizations, and links to allow the program to run.
 
 def getMovies():
     movies = requests.get("https://swapi.co/api/films/")
@@ -73,12 +50,9 @@ def getMovies():
         data_as_str = data.decode()    
         datajson = movies.json()
         movies = []
-        print(datajson)
         for movie in datajson["results"]:
-            print(movie)
             title = movie["title"]
-            movies.append(title)
-        print(movies)    
+            movies.append(title)   
         writeHTML(movies)
 
 
@@ -90,12 +64,9 @@ def getCharacters():
         data_as_str = data.decode()
         datajson = people.json() 
         people = []
-        print(datajson)
         for person in datajson["results"]:
-            print(person)
             name = person["name"]
             people.append(name)
-        print(people)
         writeHTML(people)
 
 
@@ -106,12 +77,9 @@ def getPlanets():
         data_as_str = data.decode()
         datajson = planets.json()
         planets = []
-        print(datajson)
         for planet in datajson["results"]:
-            print(planet)
             name = planet["name"]
             planets.append(name)
-        print(planets)
         writeHTML(planets)
 
 def getSpecies():
@@ -121,12 +89,9 @@ def getSpecies():
         data_as_str = data.decode()
         datajson = species.json()
         species = []
-        print(datajson)
         for name in datajson["results"]:
-            print(name)
             name = name["name"]
             species.append(name)
-        print(species)
         writeHTML(species) 
 
 def getVehicles():
@@ -136,12 +101,9 @@ def getVehicles():
         data_as_str = data.decode()
         datajson = vehicles.json()
         vehicles = []
-        print(datajson)
         for vehicle in datajson["results"]:
-            print(vehicle)
             name = vehicle["name"]
             vehicles.append(name)
-        print(vehicles)
         writeHTML(vehicles)
 
 def getStarships():
@@ -151,21 +113,19 @@ def getStarships():
         data_as_str = data.decode()
         datajson = starships.json()
         starships = []
-        print(datajson)
         for starship in datajson["results"]:
-            print(starship)
             name = starship["name"]
             starships.append(name)
-        print(starships)
         writeHTML(starships)
 
-
+#These 6 definitions are for the 6 sections of the API.
+#We access the API, fetch the information we want, and display it.
 
 def main():
     print(" ")
     print("Welcome to the Star Wars API.")
     print(" ")
-    print("Once you make a selection below, head over to myapi.html to view what you've    selected.")
+    print("Once you make a selection below, head over to myapi.html to view what you've selected.")
     print(" ")
     print("1. The Movies")
     print("2. The Characters")
@@ -175,32 +135,46 @@ def main():
     print("6. The Starships")
     print(" ")
 
-    choice = int(input("Which Star Wars facts would you like to learn about? Please pick a number from 1to 6.\n"))
-    # use API to get place info
+    choice = int(input("Which Star Wars facts would you like to learn about? Please pick a number from 1 to 6.\n"))
+    #This is where we ask the user what they would like to learn about.
 
     if choice == 1:
         getMovies()
+        print("Fetching your selection...")
+        webbrowser.open("file:///Users/stefan.ateljevic/Desktop/Github/Y10Design-PythonSA/myapi.html")
 
     elif choice == 2:
         getCharacters()
+        print("Fetching your selection...")
+        webbrowser.open("file:///Users/stefan.ateljevic/Desktop/Github/Y10Design-PythonSA/myapi.html")
 
     elif choice == 3:
         getPlanets() 
+        print("Fetching your selection...")
+        webbrowser.open("file:///Users/stefan.ateljevic/Desktop/Github/Y10Design-PythonSA/myapi.html")
 
     elif choice == 4:
         getSpecies() 
+        print("Fetching your selection...")
+        webbrowser.open("file:///Users/stefan.ateljevic/Desktop/Github/Y10Design-PythonSA/myapi.html")
 
     elif choice == 5:
         getVehicles()  
+        print("Fetching your selection...")
+        webbrowser.open("file:///Users/stefan.ateljevic/Desktop/Github/Y10Design-PythonSA/myapi.html")
 
     elif choice == 6: 
         getStarships()
+        print("Fetching your selection...")
+        webbrowser.open("file:///Users/stefan.ateljevic/Desktop/Github/Y10Design-PythonSA/myapi.html")
+
+#The choices shown here use the definitons we made earlier.
 
     else: 
-        print ("This is not a valid choice")
+        print ("This is not a valid choice.")
+        print (" ")
         print ("Hope you have a great day anyway!")
 
-
-
+#If the input is incorrect, the program will gracefully stop.
 
 main()
