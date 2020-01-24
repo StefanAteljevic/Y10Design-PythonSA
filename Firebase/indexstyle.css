@@ -35,7 +35,30 @@ li a:hover:not(.active) {
   background-color: #111;
 }*/
 
- 
+
+/*Code for text*/
+.leaveareview{
+  font-size: 28px;
+}
+
+.rules{
+  font-size: 26px;
+}
+
+.rules2{
+  font-size: 22px;
+}
+
+
+/*Code to customize the input boxes*/
+
+ #game{
+  padding: 30px 20px;
+ }
+
+#review{
+  padding: 30px 20px;
+}
 
 .active {
   background-color: #4CAF50;
@@ -215,6 +238,10 @@ img {vertical-align: middle;}
 /* This is code for the two fancy buttons on the home page. One of the
 transitions is from the right, and one is from the left.*/
 
+a {
+  text-decoration: none;
+}
+
 .btn {    
   position: relative; 
   padding: 4.4rem 4.0rem;
@@ -333,7 +360,7 @@ div:last-child {margin-bottom: 0;}
 
 .submit-image {
   /* The image used */
-  background-image: url(galaxy.png);
+  background-image: url(skyclouds.png);
 
   /* Add the blur effect */
   filter: blur(8px);
@@ -364,3 +391,4 @@ div:last-child {margin-bottom: 0;}
   padding: 20px;
   text-align: center;
 }
+

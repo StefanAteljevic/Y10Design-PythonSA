@@ -26,6 +26,22 @@ function showSlides() {
 showSlides();
 
 
+function search() {
+  const query = document.getElementById("stefan").value;
+  firebase.database().ref("/Reviews/").once("value").then(reviews => {
+    reviews.forEach(_review => {
+      const review = _review.val();
+      console.log(review.game, query);
+
+      // if(review.review == review) {
+      //   window.location.replace(`review.html?review=${review.review}`);
+      // }
+      if(review.game == query) {
+        window.location.replace(`results.html?game=${review.game}&review=${review.review}`);
+      }
+    });
+  })
+}
 
 
 

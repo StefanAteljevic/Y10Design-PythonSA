@@ -34,10 +34,10 @@
         <a href="submitareview.html">Submit A Review</a>
         <a href="contact.html">About Us</a>
         <div class="search-container">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class= "fa fa-search" ></i></button>
-          </form>
+          <!-- <form action="/action_page.php"> -->
+            <input id ="stefan" type="text" placeholder="Search.." name="search">
+            <button onclick="search()" type="button"><i class= "fa fa-search" ></i></button>
+          <!-- </form> -->
         </div>
       </div>
 
@@ -73,7 +73,8 @@
         <span class="dot"></span> 
       </div>
 
-      <div class="btn from-left">Submit A Review</div>
+      <!-- <div class="btn from-left">Submit A Review</div> -->
+      <a href="submitareview.html"><div class="btn from-left" onclick="myfunction()" >Submit A Review</div></a>
       <div class="btn from-right">Find A Review</div>
 
 
@@ -86,22 +87,7 @@
 
              <!-- <h1 id="uid"></h1> -->
             
-          <!--  HERE IS YOUR HTML CODE TO SET TEXT
-            <h3>A demonstration of how to "set" and "get" information in the database</h3>
-
-            <button onclick = "signin()" >Sign In</button>
-           
-            <input type="text" id="student" value="Enter Student">
-            <input type="text" id="subject" value="Enter Subject">
-            <input type="text" id="mark" value="Enter Mark">
-
-            <button onclick = "setData()" >Set Data</button>
-            <button onclick = "getData()" >Get data</button>
-
-            <p>Current Data:</p>
-            
-            ol means ordered list
-            <p><ol id="studentList"></ol><ol id="subjectList"></ol><ol id="markList"></ol></p>     -->
+          
 
     </body>
     
