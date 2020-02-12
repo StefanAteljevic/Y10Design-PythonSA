@@ -52,6 +52,10 @@ li a:hover:not(.active) {
 
 /*Code to customize the input boxes*/
 
+ #name{
+  padding: 30px 20px;
+ }
+
  #game{
   padding: 30px 20px;
  }
@@ -375,6 +379,40 @@ div:last-child {margin-bottom: 0;}
   background-size: cover;
 }
 
+.submit-image2 {
+  /* The image used */
+  background-image: url(mountain.png);
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.submit-image3 {
+  /* The image used */
+  background-image: url(galaxy.png);
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* Position text in the middle of the page/image */
 .submit-text {
   background-color: rgb(0,0,0); /* Fallback color */
@@ -391,4 +429,84 @@ div:last-child {margin-bottom: 0;}
   padding: 20px;
   text-align: center;
 }
+
+.submit-text3 {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: #FFFFFF;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+#gameTitle {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+}
+
+#reviewTitle {
+  color: white;
+  text-align: center;
+}
+
+#nameTitle {
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+#copyright{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  margin: 3px;
+}
+
+.reviewContainer {
+  margin-top: 4vh;
+}
+
+.textbox{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendbutton{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+}
+
+.creator{
+
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.creator{
+  content:url(creator.jpg);
+  transform: rotate(90deg);
+  height: 300px;
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
 

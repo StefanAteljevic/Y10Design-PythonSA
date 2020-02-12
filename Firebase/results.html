@@ -1,11 +1,46 @@
 <html>
 	<head>
 		<title> Game Review </title>
+
+		<link rel="stylesheet" href="indexstyle.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="indexscript.js"></script>
+
 	</head>
 
-	<body>
-		<h1 id="gameTitle">Loading...</h1>
-		<h1 id="reviewTitle">Loading...</h1>
+	  <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="submitareview.html">Submit A Review</a>
+        <a href="contact.html">About Us</a>
+        <div class="search-container">
+          <!-- <form action="/action_page.php"> -->
+            <input id ="stefan" type="text" placeholder="Search.." name="search">
+            <button onclick="search()" type="button"><i class= "fa fa-search" ></i></button>
+          <!-- </form> -->
+        </div>
+      </div>
+
+	<body style="background-color:#05071C;">
+
+		<div class="submit-image2"></div>
+
+        <div class="submit-text">
+            <h1>Find A Review</h1>
+            <p>Below, you will find the reviews that you requested!</p>
+        </div>   
+
+        <div class="subtitle">
+          <h1 style="background-color:#000000;">The information you request will be displayed below:</h1>
+        </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
 		<script src="results.js"></script>
+
+    <p style = "color:white; text-align: center; font-size: 15px;"> Reviews: </p>
+
 	</body>
 </html>

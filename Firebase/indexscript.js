@@ -37,7 +37,8 @@ function search() {
       //   window.location.replace(`review.html?review=${review.review}`);
       // }
       if(review.game == query) {
-        window.location.replace(`results.html?game=${review.game}&review=${review.review}`);
+        console.log(review.name);
+        window.location.replace(`results.html?game=${review.game}`);
       }
     });
   })

@@ -3,6 +3,10 @@
 
         <link rel="stylesheet" href="indexstyle.css">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="indexscript.js"></script>
+
         <!-- HERE ARE YOUR FIREBASE and GOOGLE AUTHENICATION IMPORTS -->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
@@ -23,6 +27,12 @@
         <a href="index.html">Home</a>
         <a class="active" href="submitareview.html">Submit A Review</a>
         <a href="contact.html">About Us</a>
+        <div class="search-container">
+          <!-- <form action="/action_page.php"> -->
+            <input id ="stefan" type="text" placeholder="Search.." name="search">
+            <button onclick="search()" type="button"><i class= "fa fa-search" ></i></button>
+          <!-- </form> -->
+        </div>
       </div>
       
             <title> Submit A Review </title>
@@ -50,26 +60,33 @@
           </div>
 
           <div class="rules2">
-            <center><h5>1. All reviews must be serious.</h5></center>
-            <center><h6>2. All reviews must contain a number rating from 0 to 10 at the end of the review.</h6></center>  
-            <center><h7>3. All review lengths are welcome.</h7></center>                      
+            <center><p>1. All reviews must be serious.</p></center>
+            <center><p>2. All reviews must contain a number rating from 0 to 10 at the end of the review.</p></center>  
+            <center><p>3. All review lengths are welcome.</p></center>                      
           </div>
 
 
-            <button onclick = "signin()" >Sign In</button>
-                       
+
+          <div class = "textbox">
+
             <textarea id="game" placeholder="Enter Game"></textarea>
             <textarea id="review" placeholder="Enter Review"></textarea>
+            <textarea id="name" placeholder="Enter Name"></textarea>    
             <!-- <input type="text" id="game" placeholder="Enter Game"> -->
             <!-- <input type="text" id="review" placeholder="Enter Review"> -->
 
-            <button onclick = "setData()" >Send review</button>
-            <button onclick = "getData()" >Get review</button>
+         
+          </div>
 
-            <p>Current Data:</p>
+          <div class = "sendbutton">
+
+            <button onclick = "setData()" >Send review</button>
+
+          </div>
+
             
 <!--             ol means ordered list -->
-            <p><ol id="gameList"></ol><ol id="reviewList"></ol></p> 
+            <p><ol id="gameList"></ol><ol id="reviewList"></ol></p><p><ol id="nameList"></ol>
 
 
 
@@ -86,7 +103,10 @@
         </form> 
  -->
 
-
+      <div id = "copyright">
+        <p style = "color: black;"> Copyright 2020 - Stefan Ateljevic </p>
+        <a href="contact.html" style = "color: black;">Contact Us</a>
+      </div>
 
     </body>
 
@@ -142,6 +162,7 @@
         function clearFields() {
           document.getElementById("game").value = "";
           document.getElementById("review").value = "";
+          document.getElementById("name").value = "";
         }
 
         function setData() {
@@ -155,11 +176,13 @@
             // Grab the Name, Subject, and Grade obtained from the HTML frontend textboxes
             var sgame = document.getElementById("game").value;
             var sreview = document.getElementById("review").value;
+            var sname = document.getElementById("name").value;
             
             // Create a JSON object to add to the database with user-inputted data
             var data = {
                 game: sgame,
                 review: sreview,
+                name: sname,
             }
             // "PUSH" means we add something to the database
             ref.push(data);
@@ -192,6 +215,7 @@
             // clear items from previously created lists
             document.getElementById("gameList").innerHTML = "";
             document.getElementById("reviewList").innerHTML = "";
+            document.getElementById("nameList").innerHTML = "";
             
             // collect all of the unique objects ('keys' or id's) out of the database
             var reviewData = data.val(); // access the data 'value' of each student 'object' 
@@ -201,8 +225,9 @@
             // iterate through the unique object id's and grab data fields: 'name', 'subject', 'mark'
             for (var i = 0; i < keys.length; i++){
               var k = keys[i];
-              var name = reviewData[k].game;
+              var game = reviewData[k].game;
               var subject = reviewData[k].review;
+              var name = reviewData[k].name;
 
               // DISPLAY STUDENT NAMES
               // Create a reference to the ordered list called 'studentList'
@@ -217,6 +242,11 @@
               entry.appendChild(document.createTextNode(review));
               oListReview.appendChild(entry);
               
+              var oListName = document.getElementById('nameList');
+              var entry = document.createElement('li'); // a list element to be added to the ordered list
+              entry.appendChild(document.createTextNode(name));
+              oListReview.appendChild(entry);
+
               // AJ: we only need to send information to the console window when we
               // are debugging our code of errors
               // console.log (keys[i]);
