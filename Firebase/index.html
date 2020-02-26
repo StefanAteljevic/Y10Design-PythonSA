@@ -33,9 +33,9 @@
         <a class="active" href="index.html">Home</a>
         <a href="submitareview.html">Submit A Review</a>
         <a href="contact.html">About Us</a>
-        <div class="search-container">
+        <div id="scroll" class="search-container">
           <!-- <form action="/action_page.php"> -->
-            <input id ="stefan" type="text" placeholder="Search.." name="search">
+            <input id ="stefan" type="text" placeholder="Search.." name="search" onkeypress="keypressed(event)">
             <button onclick="search()" type="button"><i class= "fa fa-search" ></i></button>
           <!-- </form> -->
         </div>
@@ -75,7 +75,7 @@
 
       <!-- <div class="btn from-left">Submit A Review</div> -->
       <a href="submitareview.html"><div class="btn from-left" onclick="myfunction()" >Submit A Review</div></a>
-      <div class="btn from-right">Find A Review</div>
+      <a href="#scroll"><div class="btn from-right">Find A Review</div></a>
 
       <div id = "copyright">
         <p style = "color: white;"> Copyright 2020 - Stefan Ateljevic </p>

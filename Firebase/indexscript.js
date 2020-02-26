@@ -29,6 +29,8 @@ showSlides();
 function search() {
   const query = document.getElementById("stefan").value;
   firebase.database().ref("/Reviews/").once("value").then(reviews => {
+    let gameFound = false;
+    let i = 0;
     reviews.forEach(_review => {
       const review = _review.val();
       console.log(review.game, query);
@@ -38,11 +40,24 @@ function search() {
       // }
       if(review.game == query) {
         console.log(review.name);
+        gameFound = true;
         window.location.replace(`results.html?game=${review.game}`);
       }
+
+      if(!gameFound && i == reviews.numChildren() - 1) {
+        window.location.replace("/notfound.html");
+      }
+      i++;
     });
   })
 }
 
+
+
+function keypressed(e) {
+  if(e.key === "Enter") {
+    search();
+  }
+}
 
 

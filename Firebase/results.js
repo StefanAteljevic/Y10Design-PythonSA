@@ -72,11 +72,16 @@ async function getReviews() {
 
         const thirdh1 = document.createElement("h1");
         thirdh1.innerHTML = review.game;
-        thirdh1.setAttribute("id", "reviewTitle");   
+        thirdh1.setAttribute("id", "reviewTitle");  
+
+        const fourthh1 = document.createElement("h1");
+        fourthh1.innerHTML = review.quantity + ("/10"); 
+        fourthh1.setAttribute("id", "reviewTitle");
 
         container.appendChild(thirdh1);     
-        container.appendChild(secondh1);     
-        container.appendChild(h1);     
+        container.appendChild(secondh1);
+        container.appendChild(fourthh1);      
+        container.appendChild(h1);    
 
         document.body.appendChild(container);
         // document.body.appendChild(h1);

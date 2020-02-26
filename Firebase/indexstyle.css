@@ -36,6 +36,7 @@ li a:hover:not(.active) {
 }*/
 
 
+
 /*Code for text*/
 .leaveareview{
   font-size: 28px;
@@ -62,6 +63,10 @@ li a:hover:not(.active) {
 
 #review{
   padding: 30px 20px;
+}
+
+#quantity{
+  /*padding: 30px 20px;*/
 }
 
 .active {
@@ -351,6 +356,8 @@ body {
 html {
   font-size: 12px;
   font-family: 'Playfair Display', serif;
+  scroll-behavior: smooth;
+
 }
 
 div {margin-bottom: 1rem;}
@@ -506,7 +513,14 @@ div:last-child {margin-bottom: 0;}
   margin-right: auto;
 }
 
-
-
+.creator2{
+  content:url(error_upscaled_illustration_x4.jpg);
+  transform: rotate(0deg);
+  height: 300px;
+  width: 400px;
+  display: block;
+  margin-left: 525px;
+  margin-right: auto;
+}
 
 

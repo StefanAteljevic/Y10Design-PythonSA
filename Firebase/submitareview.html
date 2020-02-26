@@ -29,7 +29,7 @@
         <a href="contact.html">About Us</a>
         <div class="search-container">
           <!-- <form action="/action_page.php"> -->
-            <input id ="stefan" type="text" placeholder="Search.." name="search">
+            <input id ="stefan" type="text" placeholder="Search.." name="search" onkeypress="keypressed(event)">
             <button onclick="search()" type="button"><i class= "fa fa-search" ></i></button>
           <!-- </form> -->
         </div>
@@ -61,7 +61,7 @@
 
           <div class="rules2">
             <center><p>1. All reviews must be serious.</p></center>
-            <center><p>2. All reviews must contain a number rating from 0 to 10 at the end of the review.</p></center>  
+            <center><p>2. All reviews must contain a number rating from 1 to 10 at the end of the review.</p></center>  
             <center><p>3. All review lengths are welcome.</p></center>                      
           </div>
 
@@ -71,7 +71,12 @@
 
             <textarea id="game" placeholder="Enter Game"></textarea>
             <textarea id="review" placeholder="Enter Review"></textarea>
-            <textarea id="name" placeholder="Enter Name"></textarea>    
+            <textarea id="name" placeholder="Enter Name"></textarea> 
+           <!--  <textarea id="quantity" placeholder="Enter Rating"></textarea> -->  
+            
+            <!-- <form id="quantity"> -->
+              <input id="quantity" type="number" name="quantity" min="1" max="10">
+            <!-- </form>   -->
             <!-- <input type="text" id="game" placeholder="Enter Game"> -->
             <!-- <input type="text" id="review" placeholder="Enter Review"> -->
 
@@ -86,7 +91,7 @@
 
             
 <!--             ol means ordered list -->
-            <p><ol id="gameList"></ol><ol id="reviewList"></ol></p><p><ol id="nameList"></ol>
+            <p><ol id="gameList"></ol><ol id="reviewList"></ol></p><p><ol id="nameList"></ol><ol id="quantityList"></ol></p>
 
 
 
@@ -163,6 +168,7 @@
           document.getElementById("game").value = "";
           document.getElementById("review").value = "";
           document.getElementById("name").value = "";
+          document.getElementById("quantity").value = "";
         }
 
         function setData() {
@@ -175,15 +181,22 @@
 
             // Grab the Name, Subject, and Grade obtained from the HTML frontend textboxes
             var sgame = document.getElementById("game").value;
+            console.log(sgame);
             var sreview = document.getElementById("review").value;
+            console.log(sreview);
             var sname = document.getElementById("name").value;
+            console.log(sname);
+            var squantity = document.getElementById("quantity").value;
+            console.log(squantity);
             
             // Create a JSON object to add to the database with user-inputted data
             var data = {
                 game: sgame,
                 review: sreview,
                 name: sname,
+                quantity: squantity,
             }
+            console.log(data);
             // "PUSH" means we add something to the database
             ref.push(data);
 
@@ -216,6 +229,7 @@
             document.getElementById("gameList").innerHTML = "";
             document.getElementById("reviewList").innerHTML = "";
             document.getElementById("nameList").innerHTML = "";
+            document.getElementById("quantityList").innerHTML = "";
             
             // collect all of the unique objects ('keys' or id's) out of the database
             var reviewData = data.val(); // access the data 'value' of each student 'object' 
@@ -228,6 +242,7 @@
               var game = reviewData[k].game;
               var subject = reviewData[k].review;
               var name = reviewData[k].name;
+              var quantity = reviewData[k].quantity;
 
               // DISPLAY STUDENT NAMES
               // Create a reference to the ordered list called 'studentList'
@@ -246,6 +261,13 @@
               var entry = document.createElement('li'); // a list element to be added to the ordered list
               entry.appendChild(document.createTextNode(name));
               oListReview.appendChild(entry);
+
+              var oListQuantity = document.getElementById('quantityList');
+              var entry = document.createElement('li');
+              entry.appendChild(document.createTextNode(quantity));
+              oListGame.appendChild(entry);
+
+              
 
               // AJ: we only need to send information to the console window when we
               // are debugging our code of errors
