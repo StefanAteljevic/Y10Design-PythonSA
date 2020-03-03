@@ -1,3 +1,5 @@
+// Slideshow script
+
 let slideIndex = 0;
 
 function showSlides() {
@@ -25,6 +27,7 @@ function showSlides() {
 
 showSlides();
 
+// Script that allows multiple reviews to be taken from firebase and placed on the page
 
 function search() {
   const query = document.getElementById("stefan").value;

@@ -1,3 +1,6 @@
+// This file is script that scane through firebase, finds the proper labels (such as name, review, etc)
+// and places in on find a review
+
 var config = {
 
           apiKey: "AIzaSyDTVLBlkzZxHfV02pbFKcIkOZnLPr76fbI",
