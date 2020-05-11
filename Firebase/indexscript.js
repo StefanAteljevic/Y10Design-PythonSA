@@ -48,7 +48,7 @@ function search() {
       }
 
       if(!gameFound && i == reviews.numChildren() - 1) {
-        window.location.replace("/notfound.html");
+        window.location.replace("notfound.html");
       }
       i++;
     });
