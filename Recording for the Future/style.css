@@ -1,21 +1,52 @@
+/*Code for the button animations*/
+header * {
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+header * span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+header * span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+header *:hover span {
+  padding-right: 25px;
+}
+
+header *:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
 /*Code for the navigation bar*/
 
 header img {
     height: 80px;
     margin-left: 40px;
-}
-body {
-    height: 125vh;
-    background-image: url('https://codetheweb.blog/assets/img/posts/style-a-navigation-bar-css/background.jpg');
-    background-size: cover;
-    font-family: sans-serif;
-    margin-top: 80px;
-    padding: 30px;
+    z-index: 99999;
 }
 
-main {
-    color: white;
-}
+
+
+
+
 
 header {
     background-color: white;
@@ -27,19 +58,24 @@ header {
     display: flex;
     align-items: center;
     box-shadow: 0 0 25px 0 black;
+    z-index: 99999;
 }
 
 header * {
     display: inline;
+    z-index: 99999;
+
 }
 
 header li {
     margin: 20px;
+    z-index: 99999;
 }
 
 header li a {
     color: black;
     text-decoration: none;
+    z-index: 99999;
 }
 
 
@@ -47,11 +83,13 @@ header li a {
 
 * {
       box-sizing: border-box;
+      z-index: 1;
     }
 
     body {
-      background-color: #474e5d;
+      
       font-family: Helvetica, sans-serif;
+      z-index: 1;
     }
 
 /* The actual timeline (the vertical ruler) */
@@ -59,6 +97,7 @@ header li a {
       position: relative;
       max-width: 1200px;
       margin: 0 auto;
+      z-index: 1;
     }
 
 /* The actual timeline (the vertical ruler) */
@@ -71,6 +110,7 @@ header li a {
       bottom: 0;
       left: 50%;
       margin-left: -3px;
+      z-index: 1;
     }
 
 /* Container around content */
@@ -79,6 +119,7 @@ header li a {
       position: relative;
       background-color: inherit;
       width: 50%;
+      z-index: 1;
     }
 
 /* The circles on the timeline */
@@ -98,11 +139,13 @@ header li a {
 /* Place the container to the left */
     .left {
       left: 0;
+      z-index: 1;
     }
 
     /* Place the container to the right */
     .right {
       left: 50%;
+      z-index: 1;
     }
 
     /* Add arrows to the left container (pointing right) */
@@ -112,11 +155,11 @@ header li a {
       position: absolute;
       top: 22px;
       width: 0;
-      z-index: 1;
       right: 30px;
       border: medium solid white;
       border-width: 10px 0 10px 10px;
       border-color: transparent transparent transparent white;
+      z-index: 1;
     }
 
     /* Add arrows to the right container (pointing left) */
@@ -126,16 +169,17 @@ header li a {
       position: absolute;
       top: 22px;
       width: 0;
-      z-index: 1;
       left: 30px;
       border: medium solid white;
       border-width: 10px 10px 10px 0;
       border-color: transparent white transparent transparent;
+      z-index: 1;
     }
 
     /* Fix the circle for containers on the right side */
     .right::after {
       left: -16px;
+      z-index: 1;
     }
 
     /* The actual content */
@@ -144,6 +188,7 @@ header li a {
       background-color: white;
       position: relative;
       border-radius: 6px;
+      z-index: 1;
     }
 
     /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -151,6 +196,7 @@ header li a {
       /* Place the timelime to the left */
       .timeline::after {
       left: 31px;
+      z-index: 1;
       }
       
       /* Full-width containers */
@@ -158,6 +204,7 @@ header li a {
       width: 100%;
       padding-left: 70px;
       padding-right: 25px;
+      z-index: 1;
       }
       
       /* Make sure that all arrows are pointing leftwards */
@@ -166,15 +213,30 @@ header li a {
       border: medium solid white;
       border-width: 10px 10px 10px 0;
       border-color: transparent white transparent transparent;
+      z-index: 1;
       }
 
       /* Make sure all circles are at the same spot */
       .left::after, .right::after {
       left: 15px;
+      z-index: 1;
       }
       
       /* Make all right containers behave like the left ones */
       .right {
       left: 0%;
+      z-index: 1;
       }
     }
+
+
+/*Timeline images code*/
+
+
+
+
+
+
+
+
+
