@@ -230,7 +230,10 @@ header li a {
     }
 
 
-/*Timeline images code*/
+mark {
+  background-color: orange;
+  color: black;
+}
 
 
 
