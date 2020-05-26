@@ -83,7 +83,7 @@ header li a {
 
 * {
       box-sizing: border-box;
-      z-index: 1;
+      z-index: 1; 
     }
 
     body {
@@ -182,13 +182,193 @@ header li a {
       z-index: 1;
     }
 
-    /* The actual content */
-    .content {
+    /* The actual content and border color */
+    .content1 {
       padding: 20px 30px;
       background-color: white;
       position: relative;
       border-radius: 6px;
       z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+
+    }
+
+    .content2 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content3 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: orange;
+    }
+
+      .content4 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content5 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content6 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: red;
+    }
+
+      .content7 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content8 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content9 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content10 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: orange;
+    }
+
+      .content11 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content12 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: orange;
+    }
+
+      .content13 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content14 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: orange;
+    }
+
+      .content15 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: red;
+    }
+
+      .content16 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
+    }
+
+      .content17 {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 6px;
+      border-color: green;
     }
 
     /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -231,11 +411,112 @@ header li a {
 
 
 mark {
-  background-color: orange;
+  background-color: white;
   color: black;
 }
 
 
+
+/*330 x 300*/
+.flip-box {
+  background-color: transparent;
+  width: 330px;
+  height: 300px;
+  border: 0px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: #913397;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+/*330 x 200*/
+.flip-boxatari {
+  background-color: transparent;
+  width: 330px;
+  height: 200px;
+  border: 0px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inneratari {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-boxatari:hover .flip-box-inneratari {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-frontatari, .flip-box-backatari {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-frontatari {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-backatari {
+  background-color: #913397;
+  color: white;
+  transform: rotateY(180deg);
+}
 
 
 
