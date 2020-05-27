@@ -1,14 +1,21 @@
 <html>
   <head>
+    <title> Video Game Timeline </title>
+
+
+    <!-- Imports -->
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+
+
   <style>
    
     body {
 
 /*This is code for the red background with the images, taken from a background site*/
 
-      background-color: #901796;
+background-color: #901796;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='800' viewBox='0 0 1600 800'%3E%3Cpath fill='%23FF7' d='M1102.5 734.8c2.5-1.2 24.8-8.6 25.6-7.5.5.7-3.9 23.8-4.6 24.5C1123.3 752.1 1107.5 739.5 1102.5 734.8zM1226.3 229.1c0-.1-4.9-9.4-7-14.2-.1-.3-.3-1.1-.4-1.6-.1-.4-.3-.7-.6-.9-.3-.2-.6-.1-.8.1l-13.1 12.3c0 0 0 0 0 0-.2.2-.3.5-.4.8 0 .3 0 .7.2 1 .1.1 1.4 2.5 2.1 3.6 2.4 3.7 6.5 12.1 6.5 12.2.2.3.4.5.7.6.3 0 .5-.1.7-.3 0 0 1.8-2.5 2.7-3.6 1.5-1.6 3-3.2 4.6-4.7 1.2-1.2 1.6-1.4 2.1-1.6.5-.3 1.1-.5 2.5-1.9C1226.5 230.4 1226.6 229.6 1226.3 229.1zM33 770.3C33 770.3 33 770.3 33 770.3c0-.7-.5-1.2-1.2-1.2-.1 0-.3 0-.4.1-1.6.2-14.3.1-22.2 0-.3 0-.6.1-.9.4-.2.2-.4.5-.4.9 0 .2 0 4.9.1 5.9l.4 13.6c0 .3.2.6.4.9.2.2.5.3.8.3 0 0 .1 0 .1 0 7.3-.7 14.7-.9 22-.6.3 0 .7-.1.9-.3.2-.2.4-.6.4-.9C32.9 783.3 32.9 776.2 33 770.3z'/%3E%3Cpath fill='%235ff' d='M171.1 383.4c1.3-2.5 14.3-22 15.6-21.6.8.3 11.5 21.2 11.5 22.1C198.1 384.2 177.9 384 171.1 383.4zM596.4 711.8c-.1-.1-6.7-8.2-9.7-12.5-.2-.3-.5-1-.7-1.5-.2-.4-.4-.7-.7-.8-.3-.1-.6 0-.8.3L574 712c0 0 0 0 0 0-.2.2-.2.5-.2.9 0 .3.2.7.4.9.1.1 1.8 2.2 2.8 3.1 3.1 3.1 8.8 10.5 8.9 10.6.2.3.5.4.8.4.3 0 .5-.2.6-.5 0 0 1.2-2.8 2-4.1 1.1-1.9 2.3-3.7 3.5-5.5.9-1.4 1.3-1.7 1.7-2 .5-.4 1-.7 2.1-2.4C596.9 713.1 596.8 712.3 596.4 711.8zM727.5 179.9C727.5 179.9 727.5 179.9 727.5 179.9c.6.2 1.3-.2 1.4-.8 0-.1 0-.2 0-.4.2-1.4 2.8-12.6 4.5-19.5.1-.3 0-.6-.2-.8-.2-.3-.5-.4-.8-.5-.2 0-4.7-1.1-5.7-1.3l-13.4-2.7c-.3-.1-.7 0-.9.2-.2.2-.4.4-.5.6 0 0 0 .1 0 .1-.8 6.5-2.2 13.1-3.9 19.4-.1.3 0 .6.2.9.2.3.5.4.8.5C714.8 176.9 721.7 178.5 727.5 179.9zM728.5 178.1c-.1-.1-.2-.2-.4-.2C728.3 177.9 728.4 178 728.5 178.1z'/%3E%3Cg fill='%23FFF'%3E%3Cpath d='M699.6 472.7c-1.5 0-2.8-.8-3.5-2.3-.8-1.9 0-4.2 1.9-5 3.7-1.6 6.8-4.7 8.4-8.5 1.6-3.8 1.7-8.1.2-11.9-.3-.9-.8-1.8-1.2-2.8-.8-1.7-1.8-3.7-2.3-5.9-.9-4.1-.2-8.6 2-12.8 1.7-3.1 4.1-6.1 7.6-9.1 1.6-1.4 4-1.2 5.3.4 1.4 1.6 1.2 4-.4 5.3-2.8 2.5-4.7 4.7-5.9 7-1.4 2.6-1.9 5.3-1.3 7.6.3 1.4 1 2.8 1.7 4.3.5 1.1 1 2.2 1.5 3.3 2.1 5.6 2 12-.3 17.6-2.3 5.5-6.8 10.1-12.3 12.5C700.6 472.6 700.1 472.7 699.6 472.7zM740.4 421.4c1.5-.2 3 .5 3.8 1.9 1.1 1.8.4 4.2-1.4 5.3-3.7 2.1-6.4 5.6-7.6 9.5-1.2 4-.8 8.4 1.1 12.1.4.9 1 1.7 1.6 2.7 1 1.7 2.2 3.5 3 5.7 1.4 4 1.2 8.7-.6 13.2-1.4 3.4-3.5 6.6-6.8 10.1-1.5 1.6-3.9 1.7-5.5.2-1.6-1.4-1.7-3.9-.2-5.4 2.6-2.8 4.3-5.3 5.3-7.7 1.1-2.8 1.3-5.6.5-7.9-.5-1.3-1.3-2.7-2.2-4.1-.6-1-1.3-2.1-1.9-3.2-2.8-5.4-3.4-11.9-1.7-17.8 1.8-5.9 5.8-11 11.2-14C739.4 421.6 739.9 421.4 740.4 421.4zM261.3 590.9c5.7 6.8 9 15.7 9.4 22.4.5 7.3-2.4 16.4-10.2 20.4-3 1.5-6.7 2.2-11.2 2.2-7.9-.1-12.9-2.9-15.4-8.4-2.1-4.7-2.3-11.4 1.8-15.9 3.2-3.5 7.8-4.1 11.2-1.6 1.2.9 1.5 2.7.6 3.9-.9 1.2-2.7 1.5-3.9.6-1.8-1.3-3.6.6-3.8.8-2.4 2.6-2.1 7-.8 9.9 1.5 3.4 4.7 5 10.4 5.1 3.6 0 6.4-.5 8.6-1.6 4.7-2.4 7.7-8.6 7.2-15-.5-7.3-5.3-18.2-13-23.9-4.2-3.1-8.5-4.1-12.9-3.1-3.1.7-6.2 2.4-9.7 5-6.6 5.1-11.7 11.8-14.2 19-2.7 7.7-2.1 15.8 1.9 23.9.7 1.4.1 3.1-1.3 3.7-1.4.7-3.1.1-3.7-1.3-4.6-9.4-5.4-19.2-2.2-28.2 2.9-8.2 8.6-15.9 16.1-21.6 4.1-3.1 8-5.1 11.8-6 6-1.4 12 0 17.5 4C257.6 586.9 259.6 588.8 261.3 590.9z'/%3E%3Ccircle cx='1013.7' cy='153.9' r='7.1'/%3E%3Ccircle cx='1024.3' cy='132.1' r='7.1'/%3E%3Ccircle cx='1037.3' cy='148.9' r='7.1'/%3E%3Cpath d='M1508.7 297.2c-4.8-5.4-9.7-10.8-14.8-16.2 5.6-5.6 11.1-11.5 15.6-18.2 1.2-1.7.7-4.1-1-5.2-1.7-1.2-4.1-.7-5.2 1-4.2 6.2-9.1 11.6-14.5 16.9-4.8-5-9.7-10-14.7-14.9-1.5-1.5-3.9-1.5-5.3 0-1.5 1.5-1.5 3.9 0 5.3 4.9 4.8 9.7 9.8 14.5 14.8-1.1 1.1-2.3 2.2-3.5 3.2-4.1 3.8-8.4 7.8-12.4 12-1.4 1.5-1.4 3.8 0 5.3 0 0 0 0 0 0 1.5 1.4 3.9 1.4 5.3-.1 3.9-4 8.1-7.9 12.1-11.7 1.2-1.1 2.3-2.2 3.5-3.3 4.9 5.3 9.8 10.6 14.6 15.9.1.1.1.1.2.2 1.4 1.4 3.7 1.5 5.2.2C1510 301.2 1510.1 298.8 1508.7 297.2zM327.6 248.6l-.4-2.6c-1.5-11.1-2.2-23.2-2.3-37 0-5.5 0-11.5.2-18.5 0-.7 0-1.5 0-2.3 0-5 0-11.2 3.9-13.5 2.2-1.3 5.1-1 8.5.9 5.7 3.1 13.2 8.7 17.5 14.9 5.5 7.8 7.3 16.9 5 25.7-3.2 12.3-15 31-30 32.1L327.6 248.6zM332.1 179.2c-.2 0-.3 0-.4.1-.1.1-.7.5-1.1 2.7-.3 1.9-.3 4.2-.3 6.3 0 .8 0 1.7 0 2.4-.2 6.9-.2 12.8-.2 18.3.1 12.5.7 23.5 2 33.7 11-2.7 20.4-18.1 23-27.8 1.9-7.2.4-14.8-4.2-21.3l0 0C347 188.1 340 183 335 180.3 333.6 179.5 332.6 179.2 332.1 179.2zM516.3 60.8c-.1 0-.2 0-.4-.1-2.4-.7-4-.9-6.7-.7-.7 0-1.3-.5-1.4-1.2 0-.7.5-1.3 1.2-1.4 3.1-.2 4.9 0 7.6.8.7.2 1.1.9.9 1.6C517.3 60.4 516.8 60.8 516.3 60.8zM506.1 70.5c-.5 0-1-.3-1.2-.8-.8-2.1-1.2-4.3-1.3-6.6 0-.7.5-1.3 1.2-1.3.7 0 1.3.5 1.3 1.2.1 2 .5 3.9 1.1 5.8.2.7-.1 1.4-.8 1.6C506.4 70.5 506.2 70.5 506.1 70.5zM494.1 64.4c-.4 0-.8-.2-1-.5-.4-.6-.3-1.4.2-1.8 1.8-1.4 3.7-2.6 5.8-3.6.6-.3 1.4 0 1.7.6.3.6 0 1.4-.6 1.7-1.9.9-3.7 2-5.3 3.3C494.7 64.3 494.4 64.4 494.1 64.4zM500.5 55.3c-.5 0-.9-.3-1.2-.7-.5-1-1.2-1.9-2.4-3.4-.3-.4-.7-.9-1.1-1.4-.4-.6-.3-1.4.2-1.8.6-.4 1.4-.3 1.8.2.4.5.8 1 1.1 1.4 1.3 1.6 2.1 2.6 2.7 3.9.3.6 0 1.4-.6 1.7C500.9 55.3 500.7 55.3 500.5 55.3zM506.7 55c-.3 0-.5-.1-.8-.2-.6-.4-.7-1.2-.3-1.8 1.2-1.7 2.3-3.4 3.3-5.2.3-.6 1.1-.9 1.7-.5.6.3.9 1.1.5 1.7-1 1.9-2.2 3.8-3.5 5.6C507.4 54.8 507.1 55 506.7 55zM1029.3 382.8c-.1 0-.2 0-.4-.1-2.4-.7-4-.9-6.7-.7-.7 0-1.3-.5-1.4-1.2 0-.7.5-1.3 1.2-1.4 3.1-.2 4.9 0 7.6.8.7.2 1.1.9.9 1.6C1030.3 382.4 1029.8 382.8 1029.3 382.8zM1019.1 392.5c-.5 0-1-.3-1.2-.8-.8-2.1-1.2-4.3-1.3-6.6 0-.7.5-1.3 1.2-1.3.7 0 1.3.5 1.3 1.2.1 2 .5 3.9 1.1 5.8.2.7-.1 1.4-.8 1.6C1019.4 392.5 1019.2 392.5 1019.1 392.5zM1007.1 386.4c-.4 0-.8-.2-1-.5-.4-.6-.3-1.4.2-1.8 1.8-1.4 3.7-2.6 5.8-3.6.6-.3 1.4 0 1.7.6.3.6 0 1.4-.6 1.7-1.9.9-3.7 2-5.3 3.3C1007.7 386.3 1007.4 386.4 1007.1 386.4zM1013.5 377.3c-.5 0-.9-.3-1.2-.7-.5-1-1.2-1.9-2.4-3.4-.3-.4-.7-.9-1.1-1.4-.4-.6-.3-1.4.2-1.8.6-.4 1.4-.3 1.8.2.4.5.8 1 1.1 1.4 1.3 1.6 2.1 2.6 2.7 3.9.3.6 0 1.4-.6 1.7C1013.9 377.3 1013.7 377.3 1013.5 377.3zM1019.7 377c-.3 0-.5-.1-.8-.2-.6-.4-.7-1.2-.3-1.8 1.2-1.7 2.3-3.4 3.3-5.2.3-.6 1.1-.9 1.7-.5.6.3.9 1.1.5 1.7-1 1.9-2.2 3.8-3.5 5.6C1020.4 376.8 1020.1 377 1019.7 377zM1329.7 573.4c-1.4 0-2.9-.2-4.5-.7-8.4-2.7-16.6-12.7-18.7-20-.4-1.4-.7-2.9-.9-4.4-8.1 3.3-15.5 10.6-15.4 21 0 1.5-1.2 2.7-2.7 2.8 0 0 0 0 0 0-1.5 0-2.7-1.2-2.7-2.7-.1-6.7 2.4-12.9 7-18 3.6-4 8.4-7.1 13.7-8.8.5-6.5 3.1-12.9 7.4-17.4 7-7.4 18.2-8.9 27.3-10.1l.7-.1c1.5-.2 2.9.9 3.1 2.3.2 1.5-.9 2.9-2.3 3.1l-.7.1c-8.6 1.2-18.4 2.5-24 8.4-3 3.2-5 7.7-5.7 12.4 7.9-1 17.7 1.3 24.3 5.7 4.3 2.9 7.1 7.8 7.2 12.7.2 4.3-1.7 8.3-5.2 11.1C1335.2 572.4 1332.6 573.4 1329.7 573.4zM1311 546.7c.1 1.5.4 3 .8 4.4 1.7 5.8 8.7 14.2 15.1 16.3 2.8.9 5.1.5 7.2-1.1 2.7-2.1 3.2-4.8 3.1-6.6-.1-3.2-2-6.4-4.8-8.3C1326.7 547.5 1317.7 545.6 1311 546.7z'/%3E%3C/g%3E%3C/svg%3E");
 
 
@@ -16,8 +23,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
   </style>
   </head>
+
+ 
+  <!-- Customizing the background -->
 <body style = "height: 125vh;
-    /*background-image: url('https://codetheweb.blog/assets/img/posts/style-a-navigation-bar-css/background.jpg');*/
     background-size: cover;
     font-family: sans-serif;
     margin-top: 80px;
@@ -26,7 +35,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 
 
-
+        <!-- Navigation bar code -->
         <header>
            <img src="timelinelogo.png">
             <nav>
@@ -34,6 +43,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                     <li><a href="home.html">Home</a></li>
                     <li><a href="timeline.html">Timeline</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    
+                    <!-- Time HTML -->
+
+                    <body style = "position: absolute; right: 0;" onload="startTime()">
+
+                    <div style = "position: absolute; right: 30; top: 27;" id="txt"></div>
                 </ul>
             </nav>
         </header>
@@ -45,7 +60,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 <h1 style = "color: white; text-align: center;"> <mark>Legend</mark></h1>
 
-<br>
+  <br>
 
 <h2 style = "color: white; text-align: center;"> <mark>Positive Contribution = <span style="color: green">Green</span></mark></h2>
 
@@ -53,10 +68,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 <h2 style = "color: white; text-align: center;"> <mark>Mixed Contribution = <span style="color: orange">Orange</span></mark></h2>
 
-<br> 
-<br>
+<h2 style = "color: white; text-align: center;"> <mark>Images = <span style="color: purple">Flipboxes</span></mark></h2>
 
-<!-- Timeline Code, base from W3Schools -->
+  <br> 
+  <br>
+
+<!-- Timeline Code, base from W3Schools, mainly modifications -->
 
 <div class="timeline">
   <div class="container left">
@@ -69,8 +86,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             <img src="image1.jpg" class = "effectfront" alt="Tennis for Two" style = "width:330; height:300; display: block; margin-left: auto; margin-right: auto;">
             </div>
           <div class="flip-box-back">
-            <h2>Paris</h2>
-            <p>What an amazing city</p>
+            <h2>Tennis For Two</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/s2E9iSQfGdg">
+              </iframe>
           </div>
         </div>
       </div>
@@ -86,8 +106,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             <img src="image2.jpeg" alt="Odyssey" style = "width:330; height:300; display: block; margin-left: auto; margin-right: auto;">
             </div>
           <div class="flip-box-back">
-            <h2>Paris</h2>
-            <p>What an amazing city</p>
+            <h2>Magnavox Odyssey</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/Dj66VO1J9gQ">
+              </iframe>
           </div>
         </div>
       </div>
@@ -103,8 +126,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             <img src="image3.jpg" alt="Pong" style = "width:330; height:300; display: block; margin-left: auto; margin-right: auto;">
             </div>
           <div class="flip-box-back">
-            <h2>Paris</h2>
-            <p>What an amazing city</p>
+            <h2>Pong</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/XNRx5hc4gYc">
+              </iframe>
           </div>
         </div>
       </div>
@@ -121,8 +147,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             <img src="image4.jpg" alt="Atari 2600" style = "width:330; height:200; display: block; margin-left: auto; margin-right: auto;">
             </div>
           <div class="flip-box-backatari">
-            <h2>Paris</h2>
-            <p>What an amazing city</p>
+            <h2>Atari 2600</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="70"
+              src="https://www.youtube.com/embed/ELGQZF1xRVE">
+              </iframe> 
           </div>
         </div>
       </div>
@@ -138,8 +167,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             <img src="image5.jpg" alt="Arcade" style = "width:330; height:300; display: block; margin-left: auto; margin-right: auto;">
             </div>
           <div class="flip-box-back">
-            <h2>Paris</h2>
-            <p>What an amazing city</p>
+            <h2>Arcade Games</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/-CbyAk3Sn9I">
+              </iframe> 
           </div>
         </div>
       </div>
@@ -150,7 +182,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>The Video Game Crash: 1983</h2>
       <p>The North American video game industry experienced a major “crash” due to a number of factors, including an oversaturated game console market, competition from computer gaming, and a surplus of over-hyped, low-quality games, such as the infamous <i>E.T.</i>, an <b>Atari</b> game based on the eponymous movie and often considered the worst game ever created. The crash led to the bankruptcy of several companies. 
       </p>
-      <img src="image6.jpg" alt="Crash" style = "width:330; height:260; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="image6.jpg" alt="Crash" style = "width:330; height:300; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-back">
+            <h2>The Video Game Crash</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/kv7DJrLAZus">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container left">
@@ -158,7 +203,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Recovery (NES): 1985</h2>
       <p><b>Nintendo</b> released the <i>Nintendo Entertainment System</i> (NES), which led to the recovery of the industry. The console has improved 8-bit graphics, colors, sound and gameplay over previous consoles. It sold 61.91 million units worldwide. 
       </p>
-      <img src="image7.jpg" alt="NES" style = "width:330; height:280; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxnintendo">
+        <div class="flip-box-innernintendo">
+          <div class="flip-box-frontnintendo">
+            <img src="image7.jpg" alt="NES" style = "width:330; height:270; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backnintendo">
+            <h2>NES</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="150"
+              src="https://www.youtube.com/embed/gebZkBOIf74">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container right">
@@ -166,7 +224,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Nintendo Games: 1980s - 1990s</h2>
       <p><b>Nintendo</b>, which began as a playing card manufacturer in 1889, released a number of important video game franchises still around today, such as <i>Super Mario Bros.</i>, <i>The Legend of Zelda</i>, and <i>Metroid</i>. Third-party developers released many other long-lasting franchises, such as <b>Capcom’s</b> <i>Mega Man</i>, <b>Konami’s</b> <i>Castlevania</i>, <b>Square’s</b> <i>Final Fantasy</i>, and <b>Enix’s</b> <i>Dragon Quest</i>. 
       </p>
-      <img src="image8.jpeg" alt="Nintendo Games" style = "width:350; height:270; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxnintendo">
+        <div class="flip-box-innernintendo">
+          <div class="flip-box-frontnintendo">
+            <img src="image8.jpeg" alt="Nintendo Games" style = "width:350; height:270; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backnintendo">
+            <h2>Nintendo Games</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="150"
+              src="https://www.youtube.com/embed/H2CGmCcERrE">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container left">
@@ -174,7 +245,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Game Boy: 1989</h2>
       <p><b>Nintendo</b> made waves again by popularizing handheld gaming with the release of its 8-bit <i>Game Boy</i> video game device and the often-bundled game <i>Tetris</i>. Over the next 25 years, <b>Nintendo</b> would release a number of successful successors to the <i>Game Boy</i>, including the <i>Game Boy color</i> in 1998, <i>Nintendo DS</i> in 2004, and <i>Nintendo 3DS</i> in 2011. 
       </p>
-      <img src="image9.jpg" alt="Game Boy" style = "width:270; height:300; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="image9.jpg" alt="Game Boy" style = "width:270; height:300; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-back">
+            <h2>Game Boy</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/cU011lLs0M0">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container right">
@@ -182,7 +266,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>The First Console War (Sega Genesis, SNES): 1990s</h2>
       <p>The <i>Sega Genesis</i> had technological superiority to the <i>NES</i>, clever marketing, and the 1991 release of the <i>Sonic the Hedgehog</i> game. To counter, <b>Nintendo</b> released its 16-bit <i>Super NES</i> console in North America, launching the first real “console war.” With a much larger library of games, lower price point, and successful marketing, the <i>Genesis</i> had leapfrogged ahead of the <i>SNES</i> in North America by the mid-1990s. Unfortunately, this console would set a precedent for a big divide among gamers, which would lead to conflict and disagreement. 
       </p>
-      <img src="image10.jpg" alt="First Console War" style = "width:395; height:200; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="image10.jpg" alt="First Console War" style = "width:330; height:200; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-back">
+            <h2>The First Console War</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/T_MOqHyCUEc">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container left">
@@ -190,7 +287,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>3D Gaming (Sega Saturn, PlayStation, Nintendo 64): 1990s</h2>
       <p>In 1995, <b>Sega</b> released its <i>Saturn</i> system, the first 32-bit console that played games on CDs rather than cartridges, five months ahead of schedule. This move was to beat <b>Sony’s</b> first foray into video games, the <i>Playstation</i>, which sold for $100 less than the <i>Saturn</i> when it launched later that year. The following year, <b>Nintendo</b> released its cartridge-based 64-bit system, the <i>Nintendo 64</i>. 
       </p>
-      <img src="image11.jpg" alt="3D Gaming" style = "width:360; height:205; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="image11.jpg" alt="3D Gaming" style = "width:360; height:205; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-back">
+            <h2>3D Gaming</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="180"
+              src="https://www.youtube.com/embed/KjX858fJ2tA">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container right">
@@ -198,7 +308,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Sony’s Domination: Late 1990s - Early 2000s</h2>
       <p><b>Sony</b> dominated the video game market and would continue to do so into the next generation. In fact, the <i>Playstation 2</i>, released in 2000 and able to play original <i>Playstation</i> games, would become the best-selling game console of all time. The <i>Playstation 2</i>, which was the first console that used DVDs, went up against the <b>Sega</b> <i>Dreamcast</i> (released in 1999), the <b>Nintendo</b><i> Gamecube</i> (2001), and <b>Microsoft’s</b><i> Xbox</i> (2001). 
       </p>
-      <img src="image12.jpg" alt="Sony" style = "width:330; height:180; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxatari">
+        <div class="flip-box-inneratari">
+          <div class="flip-box-frontatari">
+            <img src="image12.jpg" alt="Sony" style = "width:330; height:200; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backatari">
+            <h2>Playstation 2</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="70"
+              src="https://www.youtube.com/embed/Hvcps5dFzfc">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container left">
@@ -206,7 +329,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Modern Age of Gaming: 2005 - 2006</h2>
       <p><b>Microsoft’s</b><i> Xbox 360</i>, <b>Sony’s</b> <i>Playstation 3</i>, and <b>Nintendo’s</b><i> Wii</i> kicked off the modern age of high-definition gaming. Though the <i>Playstation 3</i>—the only system at the time to play Blu-rays—was successful in its own right, <b>Sony</b>, for the first time, faced stiff competition from its rivals. 
       </p>
-      <img src="image13.jpg" alt="Modern age" style = "width:330; height:230; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxatari">
+        <div class="flip-box-inneratari">
+          <div class="flip-box-frontatari">
+            <img src="image13.jpg" alt="Modern age" style = "width:330; height:200; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backatari">
+            <h2>Modern Age of Gaming</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="70"
+              src="https://www.youtube.com/embed/67XNPwhBPcg">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container right">
@@ -214,7 +350,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Mobile Gaming: Late 2000s - Early 2010s</h2>
       <p>Towards the end of the decade and beginning of the next, video games spread to social media platforms like <b>Facebook</b> and mobile devices like the <b>iPhone</b>, reaching a more casual gaming audience. <b>Rovio</b>, the company behind the <i>Angry Birds</i> mobile device game (and, later <i>Angry Birds</i> animated movie), reportedly made a whopping $200 million in 2012. 
       </p>
-      <img src="image14.jpg" alt="Angry Birds" style = "width:330; height:235; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxatari">
+        <div class="flip-box-inneratari">
+          <div class="flip-box-frontatari">
+            <img src="image14.jpg" alt="Angry Birds" style = "width:330; height:200; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backatari">
+            <h2>Mobile Gaming</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="70"
+              src="https://www.youtube.com/embed/g5TSGw1RXqY">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container left">
@@ -222,7 +371,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Accessories: 2011</h2>
       <p><i>Skylanders: Spyro’s Adventure</i> brought video games into the physical world. The game requires players to place plastic toy figures (sold separately) onto an accessory, which reads the toys’ NFC tags to bring the characters into the game. The next few years would see several sequels and other toy-video game hybrids, such as <i>Disney Infinity</i>, which features <b>Disney</b> characters. 
       </p>
-      <img src="image15.jpg" alt="Skylanders" style = "width:330; height:240; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxnintendo">
+        <div class="flip-box-innernintendo">
+          <div class="flip-box-frontnintendo">
+            <img src="image15.jpg" alt="Skylanders" style = "width:330; height:270; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backnintendo">
+            <h2>Skylanders: Spyro's Adventure</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="120"
+              src="https://www.youtube.com/embed/OjIxJuXGQ34">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container right">
@@ -234,7 +396,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <br></br>
       With their new revamped consoles, both <b>Sony</b> and <b>Microsoft</b> currently have their sights set on virtual reality gaming, a technology that has the potential to change the way players experience video games.
       </p>
-      <img src="image16.jpg" alt="Current Gen" style = "width:360; height:230; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxatari">
+        <div class="flip-box-inneratari">
+          <div class="flip-box-frontatari">
+            <img src="image16.jpg" alt="Current Gen" style = "width:340; height:210; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backatari">
+            <h2>Current Generation</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="70"
+              src="https://www.youtube.com/embed/lzk3uDCxYS0">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container left">
@@ -242,10 +417,25 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       <h2>Future Generation:</h2>
       <p>The future is looking bright with the announcements of the <i>PlayStation 5 </i>and <i>Xbox Series X</i>, both set for the holidays of 2020. With faster and more powerful specs, these consoles will be the greatest that we have ever seen 
       </p>
-      <img src="image17.jpg" alt="Future Gen" style = "width:330; height:250; display: block; margin-left: auto; margin-right: auto;">
+      <div class="flip-boxnintendo">
+        <div class="flip-box-innernintendo">
+          <div class="flip-box-frontnintendo">
+            <img src="image17.jpg" alt="Future Gen" style = "width:330; height:270; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+          <div class="flip-box-backnintendo">
+            <h2>Future Generation</h2>
+            <p>Additional Information:</p>
+              <iframe width="180" height="150"
+              src="https://www.youtube.com/embed/VjgBrfxhXOs">
+              </iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Postface Code -->
 
 <p style = "color: white; text-align: center;"> <mark>Postface: Information used is from History.com</mark> </p>
 <p style = "color: white; text-align: center;"> <mark>History.com Editors. (2017, September). Video Game History. HISTORY. https://www.history.com/topics/inventions/history-of-video-games</mark></p>

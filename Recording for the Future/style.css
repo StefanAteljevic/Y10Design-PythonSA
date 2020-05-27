@@ -43,11 +43,6 @@ header img {
     z-index: 99999;
 }
 
-
-
-
-
-
 header {
     background-color: white;
     position: fixed;
@@ -416,6 +411,7 @@ mark {
 }
 
 
+/*Flip box code, base from w3 schools, mainly modifications*/
 
 /*330 x 300*/
 .flip-box {
@@ -456,13 +452,13 @@ mark {
 
 /* Style the front side (fallback if image is missing) */
 .flip-box-front {
-  background-color: #bbb;
+  background-color: white;
   color: black;
 }
 
 /* Style the back side */
 .flip-box-back {
-  background-color: #913397;
+  background-color: #46F24A;
   color: white;
   transform: rotateY(180deg);
 }
@@ -513,7 +509,57 @@ mark {
 
 /* Style the back side */
 .flip-box-backatari {
-  background-color: #913397;
+  background-color: #46F24A;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*330 x 300*/
+.flip-boxnintendo {
+  background-color: transparent;
+  width: 330px;
+  height: 270px;
+  border: 0px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-innernintendo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-boxnintendo:hover .flip-box-innernintendo {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-frontnintendo, .flip-box-backnintendo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-frontnintendo {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-backnintendo {
+  background-color: #46F24A;
   color: white;
   transform: rotateY(180deg);
 }
