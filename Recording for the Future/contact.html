@@ -2,19 +2,48 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
   <style>
     
   </style>
   </head>
-<body>
+<body style = "height: 1vh;
+    background-image: url('adventuretime.jpg');
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 100px
+    padding: 100px;
+    z-index: 99999;">
 
         <header>
-           <img src="timelinelogo.png">
+           <img src="timelinelogo.jpg">
             <nav>
                 <ul>
                     <li><a href="home.html">Home</a></li>
                     <li><a href="timeline.html">Timeline</a></li>
                     <li><a href="contact.html">Contact</a></li>
+
+                    <body style = "position: absolute; right: 0;" onload="startTime()">
+
+                    <div style = "position: absolute; right: 30; top: 27;" id="txt"></div>
                 </ul>
             </nav>
         </header>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h2><mark style = "background-color: white; color:black;">Send me an email:</mark></h2>
+
+        <form action="mailto:stefan.ateljevic@ucc.on.ca" method="post" enctype="text/plain"><mark style = "background-color: white; color:black;">
+        Name:</mark><br>
+        <input type="text" name="name"><br><br><mark style = "background-color: white; color:black;">
+        E-mail:</mark><br>
+        <input type="text" name="mail"><br><br><mark style = "background-color: white; color:black;">
+        Comment:</mark><br>
+        <input type="text" name="comment" size="50"><br><br>
+        <input type="submit" value="Send">
+        <input type="reset" value="Reset">
+        </form>
